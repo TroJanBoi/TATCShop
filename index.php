@@ -6,39 +6,30 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js">
 <!--<![endif]-->
-
 <head>
-
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <title>Be</title>
+    <title>TATCShop</title>
     <meta name="description" content="">
     <meta name="author" content="">
-
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
     <!-- Favicons -->
-    <link rel="shortcut icon" href="images/favicon.ico">
-
+    <link rel="shortcut icon" href="images/tatc-logo.ico">
     <!-- FONTS -->
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic,900'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Montserrat:100,300,400,400italic,500,700,700italic'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Asap+Condensed:100,300,400,400italic,500,700,700italic'>
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,500,700,700italic'>
-
     <!-- CSS -->
     <link rel='stylesheet' href='css/global.css'>
     <link rel='stylesheet' href='css/structure.css'>
     <link rel='stylesheet' href='css/denim.css'>
     <link rel='stylesheet' href='css/custom.css'>
-
     <!-- Revolution Slider -->
     <link rel="stylesheet" href="plugins/rs-plugin/css/settings.css">
-
 </head>
-
 <body class="template-slider style-simple button-flat layout-full-width if-zoom if-border-hide no-shadows header-classic minimalist-header sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-no-borders menuo-right mobile-tb-hide mobile-side-slide mobile-mini-mr-ll tablet-sticky mobile-sticky">
     <div id="Wrapper">
         <div id="Header_wrapper">
@@ -49,7 +40,7 @@
                         <div class="column one">
                             <div class="top_bar_left clearfix">
                                 <div class="logo">
-                                    <a id="logo" href="index.php" title="BeDenim - BeTheme" data-height="60" data-padding="0"><img class="logo-main scale-with-grid" src="images/denim.png" data-retina="images/retina-denim.png" data-height="21"><img class="logo-sticky scale-with-grid" src="images/denim.png" data-retina="images/retina-denim.png" data-height="21"><img class="logo-mobile scale-with-grid" src="images/denim.png" data-retina="images/retina-denim.png" data-height="21"><img class="logo-mobile-sticky scale-with-grid" src="images/denim.png" data-retina="images/retina-denim.png" data-height="21">
+                                    <a id="logo" href="index.php" data-height="60" data-padding="0"><img class="logo-main scale-with-grid" src="images/tatc-logo.gif" >
                                     </a>
                                 </div>
                                 <div class="menu_wrapper">
@@ -64,10 +55,6 @@
                                         </ul>
                                     </nav>
                                     <a class="responsive-menu-toggle" href="#"><i class="icon-menu-fine"></i></a>
-                                </div>
-                            </div>
-                            <div class="top_bar_right">
-                                <div class="top_bar_right_wrapper"><a id="header_cart" href="cart.php"><i class="icon-bag-fine"></i><span>0</span></a>
                                 </div>
                             </div>
                         </div>
