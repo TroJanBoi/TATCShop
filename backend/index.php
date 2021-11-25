@@ -20,6 +20,12 @@
       case "add_member":
         include "add_member.php";
         break;
+      case "edit_member":
+        include "edit_member.php";
+        break;
+      case "del_member":
+        include "del_member.php";
+        break;
         default:
           include "member.php";
     }

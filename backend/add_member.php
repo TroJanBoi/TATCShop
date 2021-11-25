@@ -5,6 +5,15 @@ if(isset($_POST['add'])){
   $password = $_POST['password'];
   $name = $_POST['name'];
   $position = $_POST['position'];
+  if( $email == '' || $password == '' || $name == '' || $position == '' ){
+    echo "<script>alert('คุณยังไม่ได้กรอกข้อมูล');</script>";
+  }else{
+    $old_data = mysqli_fetch_array($con->query("SELECT * FROM user"));
+    if($old_data['email'] == $email){
+      echo "<script>alert('อีเมลนี้มีอยู่แล้ว')</script>";
+  }else if($old_data['name'] == $name){
+      echo "<script>alert('ชื่อนี้มีอยู่แล้ว')</script>";
+  }else{
   $sql = "INSERT INTO user VALUES('','$email','$password','$name','$position')";
   $result = $con->query($sql);
   if(!$result){
@@ -13,16 +22,16 @@ if(isset($_POST['add'])){
     echo "<script>window.location.href='index.php?page=member'</script>";
   }
 }
+  }
+}
 ?>
 <script type="text/javascript">
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
-
                 reader.onload = function (e) {
                     $('#blah').attr('src', e.target.result);
                 }
-
                 reader.readAsDataURL(input.files[0]);
             }
         }

@@ -1,5 +1,9 @@
 <?php
 $menu = "index";
+require_once 'connect.php';
+$sql = "SELECT * FROM user ";
+$result = $con->query($sql);
+isset( $_POST['user_id'] ) ? $user_id = $_POST['user_id'] : $user_id = "";
 ?>
 
 <!-- Content Header (Page header) -->
@@ -28,308 +32,43 @@ $menu = "index";
             <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
               <thead>
                 <tr role="row" class="info">
-                  <th  tabindex="0" rowspan="1" colspan="1" style="width: 7%;">ลำดับ</th>
+                <th  tabindex="0" rowspan="1" colspan="1" style="width: 7%;">ลำดับ</th>
+                  <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">อีเมล</th>
                   <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">ชื่อ</th>
-                  <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">นามสกุล</th>
-                  <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">อีเมล์</th>
-                  <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">เบอร์โทร</th>
-                  <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">ที่อยู่</th>
-                   <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">-</th>
-                  
+                  <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">ตำแหน่ง</th>
+                  <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">-</th>
                 </tr>
               </thead>
+              
               <tbody>
-                
-                <tr>
-                   <td>
-                    No.
-                  </td>
-                  <td>
-                    วัยวุฒิ
-                  </td>
-                  <td>
-                    ชุมเมืองปัก
-                  </td>
-                  <td>
-                    devtai@gmail.com
-                  </td>
-                   <td>
-                   098-373-8651
-                  </td>
-                   <td>
-                  310/181 บางปะกอก กรุงเทพมหานคร
-                  </td>
-                  <td>
-                    
-                    <a class="btn btn-info btn-xs" href="https://www.youtube.com/watch?v=ogcLWCZx80I" target="_blank">
-                      <i class="fas fa-eye">
-                      </i>
-                   
-                    </a>
-
-             
-                    <a class="btn btn-warning btn-xs" href="https://www.youtube.com/watch?v=dS5huqAyE30" target="_blank">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                    </a>
-
-                    <a class="btn btn-danger btn-xs" href="https://www.youtube.com/watch?v=ww_rpK-Sz3c" target="_blank">
-                      <i class="fas fa-trash-alt">
-                      </i> 
-                    </a>
-                  </td>
-                  
-                  
-                </tr>
+              <?php
+                 $i = 1;   
+                   while($row = mysqli_fetch_array($result))
+                   {                
+                ?>
                     <tr>
-                   <td>
-                    No.
-                  </td>
-                  <td>
-                    วัยวุฒิ
-                  </td>
-                  <td>
-                    ชุมเมืองปัก
-                  </td>
-                  <td>
-                    devtai@gmail.com
-                  </td>
-                   <td>
-                   098-373-8651
-                  </td>
-                   <td>
-                  310/181 บางปะกอก กรุงเทพมหานคร
-                  </td>
-                  <td>
-
-                    <a class="btn btn-info btn-xs" href="https://www.youtube.com/watch?v=ogcLWCZx80I" target="_blank">
-                      <i class="fas fa-eye">
-                      </i>
-                   
-                    </a>
-
-             
-                    <a class="btn btn-warning btn-xs" href="https://www.youtube.com/watch?v=dS5huqAyE30" target="_blank">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                    </a>
-
-                    <a class="btn btn-danger btn-xs" href="https://www.youtube.com/watch?v=ww_rpK-Sz3c" target="_blank">
-                      <i class="fas fa-trash-alt">
-                      </i> 
-                    </a>
-                  </td>
-                  
-                  
-                </tr>
-                    <tr>
-                   <td>
-                    No.
-                  </td>
-                  <td>
-                    วัยวุฒิ
-                  </td>
-                  <td>
-                    ชุมเมืองปัก
-                  </td>
-                  <td>
-                    devtai@gmail.com
-                  </td>
-                   <td>
-                   098-373-8651
-                  </td>
-                   <td>
-                  310/181 บางปะกอก กรุงเทพมหานคร
-                  </td>
-                  <td>
-
-                    <a class="btn btn-info btn-xs" href="https://www.youtube.com/watch?v=ogcLWCZx80I" target="_blank">
-                      <i class="fas fa-eye">
-                      </i>
-                   
-                    </a>
-
-             
-                    <a class="btn btn-warning btn-xs" href="https://www.youtube.com/watch?v=dS5huqAyE30" target="_blank">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                    </a>
-
-                    <a class="btn btn-danger btn-xs" href="https://www.youtube.com/watch?v=ww_rpK-Sz3c" target="_blank">
-                      <i class="fas fa-trash-alt">
-                      </i> 
-                    </a>
-                  </td>
-                  
-                  
-                </tr>
-                    <tr>
-                   <td>
-                    No.
-                  </td>
-                  <td>
-                    วัยวุฒิ
-                  </td>
-                  <td>
-                    ชุมเมืองปัก
-                  </td>
-                  <td>
-                    devtai@gmail.com
-                  </td>
-                   <td>
-                   098-373-8651
-                  </td>
-                   <td>
-                  310/181 บางปะกอก กรุงเทพมหานคร
-                  </td>
-                  <td>
-
-                    <a class="btn btn-info btn-xs" href="https://www.youtube.com/watch?v=ogcLWCZx80I" target="_blank">
-                      <i class="fas fa-eye">
-                      </i>
-                   
-                    </a>
-
-             
-                    <a class="btn btn-warning btn-xs" href="https://www.youtube.com/watch?v=dS5huqAyE30" target="_blank">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                    </a>
-
-                    <a class="btn btn-danger btn-xs" href="https://www.youtube.com/watch?v=ww_rpK-Sz3c" target="_blank">
-                      <i class="fas fa-trash-alt">
-                      </i> 
-                    </a>
-                  </td>
-                  
-                  
-                </tr>
-                    <tr>
-                   <td>
-                    No.
-                  </td>
-                  <td>
-                    วัยวุฒิ
-                  </td>
-                  <td>
-                    ชุมเมืองปัก
-                  </td>
-                  <td>
-                    devtai@gmail.com
-                  </td>
-                   <td>
-                   098-373-8651
-                  </td>
-                   <td>
-                  310/181 บางปะกอก กรุงเทพมหานคร
-                  </td>
-                  <td>
-
-                    <a class="btn btn-info btn-xs" href="https://www.youtube.com/watch?v=ogcLWCZx80I" target="_blank">
-                      <i class="fas fa-eye">
-                      </i>
-                   
-                    </a>
-
-             
-                    <a class="btn btn-warning btn-xs" href="https://www.youtube.com/watch?v=dS5huqAyE30" target="_blank">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                    </a>
-
-                    <a class="btn btn-danger btn-xs" href="https://www.youtube.com/watch?v=ww_rpK-Sz3c" target="_blank">
-                      <i class="fas fa-trash-alt">
-                      </i> 
-                    </a>
-                  </td>
-                  
-                  
-                </tr>
-                    <tr>
-                   <td>
-                    No.
-                  </td>
-                  <td>
-                    วัยวุฒิ
-                  </td>
-                  <td>
-                    ชุมเมืองปัก
-                  </td>
-                  <td>
-                    devtai@gmail.com
-                  </td>
-                   <td>
-                   098-373-8651
-                  </td>
-                   <td>
-                  310/181 บางปะกอก กรุงเทพมหานคร
-                  </td>
-                  <td>
-
-                    <a class="btn btn-info btn-xs" href="https://www.youtube.com/watch?v=ogcLWCZx80I" target="_blank">
-                      <i class="fas fa-eye">
-                      </i>
-                   
-                    </a>
-
-             
-                    <a class="btn btn-warning btn-xs" href="https://www.youtube.com/watch?v=dS5huqAyE30" target="_blank">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                    </a>
-
-                    <a class="btn btn-danger btn-xs" href="https://www.youtube.com/watch?v=ww_rpK-Sz3c" target="_blank">
-                      <i class="fas fa-trash-alt">
-                      </i> 
-                    </a>
-                  </td>
-                  
-                  
-                </tr>
-                    <tr>
-                   <td>
-                    No.
-                  </td>
-                  <td>
-                    วัยวุฒิ
-                  </td>
-                  <td>
-                    ชุมเมืองปัก
-                  </td>
-                  <td>
-                    devtai@gmail.com
-                  </td>
-                   <td>
-                   098-373-8651
-                  </td>
-                   <td>
-                  310/181 บางปะกอก กรุงเทพมหานคร
-                  </td>
-                  <td>
-
-                    <a class="btn btn-info btn-xs" href="https://www.youtube.com/watch?v=ogcLWCZx80I" target="_blank">
-                      <i class="fas fa-eye">
-                      </i>
-                   
-                    </a>
-
-             
-                    <a class="btn btn-warning btn-xs" href="https://www.youtube.com/watch?v=dS5huqAyE30" target="_blank">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                    </a>
-
-                    <a class="btn btn-danger btn-xs" href="https://www.youtube.com/watch?v=ww_rpK-Sz3c" target="_blank">
-                      <i class="fas fa-trash-alt">
-                      </i> 
-                    </a>
-                  </td>
-                  
-                  
-                </tr>
-               
+                      <td><?php echo $row['user_id'] ?></td>
+                      <td><?php echo $row['email'] ?></td>
+                      <td><?php echo $row['name'] ?></td>
+                      <td><?php echo $row['position'] ?></td>
+                      <td>           
+                        <a class="btn btn-warning btn-xs" href="index.php?page=edit_member" >
+                          <i class="fas fa-pencil-alt">
+                          </i>
+                        </a>
+                        <a class="btn btn-danger btn-xs" href="index.php?page=del_member">
+                          <i class="fas fa-trash-alt">
+                          </i> 
+                        </a>
+                      </td>
+                    </tr>
+                    <?php
+                    $i++;
+                   }
+                ?>
                 
               </tbody>
+              
             </table>
             
           </div>
