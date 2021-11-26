@@ -3,7 +3,7 @@ $menu = "index";
 require_once 'connect.php';
 $sql = "SELECT * FROM user ";
 $result = $con->query($sql);
-isset( $_POST['user_id'] ) ? $user_id = $_POST['user_id'] : $user_id = "";
+isset( $_POST['id'] ) ? $user_id = $_POST['id'] : $user_id = "";
 ?>
 
 <!-- Content Header (Page header) -->
@@ -47,16 +47,16 @@ isset( $_POST['user_id'] ) ? $user_id = $_POST['user_id'] : $user_id = "";
                    {                
                 ?>
                     <tr>
-                      <td><?php echo $row['user_id'] ?></td>
+                      <td><?php echo $row['id'] ?></td>
                       <td><?php echo $row['email'] ?></td>
                       <td><?php echo $row['name'] ?></td>
                       <td><?php echo $row['position'] ?></td>
                       <td>           
-                        <a class="btn btn-warning btn-xs" href="index.php?page=edit_member" >
+                        <a class="btn btn-warning btn-xs" href="edit_member.php?id=<?php echo $row['id']?>" >
                           <i class="fas fa-pencil-alt">
                           </i>
                         </a>
-                        <a class="btn btn-danger btn-xs" href="index.php?page=del_member">
+                        <a class="btn btn-danger btn-xs" href="del_member.php?id=<?php echo $row['id']?>">
                           <i class="fas fa-trash-alt">
                           </i> 
                         </a>
