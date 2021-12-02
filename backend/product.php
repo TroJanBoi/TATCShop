@@ -20,6 +20,9 @@ $result = $con->query($sql);
         <a href="index.php?page=add_product" class="btn btn-success btn-xs">      
             <i class="fa fa-user-plus"></i> เพิ่มข้อมูลสินค้า
           </a>
+          <a href="index.php?page=add_pro_many" class="btn btn-success btn-xs">      
+            <i class="fa fa-user-plus"></i> เพิ่มข้อมูลสินค้าหลายรายการ
+          </a>
         </div>
       </div>
       <br>

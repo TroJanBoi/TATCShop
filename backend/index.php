@@ -38,11 +38,13 @@
       case "del_product":
         include "del_product.php";
         break;
-      
       case "add_many":
         include "add_many.php";
         break;
-        default:  include "member.php";
+      case "add_pro_many":
+        include "add_pro_many.php";
+        break;
+      default:  include "member.php";
 }
   ?>
 </div>
