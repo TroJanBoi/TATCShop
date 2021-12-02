@@ -26,9 +26,18 @@
       case "del_member":
         include "del_member.php";
         break;
+      case "product":
+        include "product.php";
+        break;
+      case "edit_product":
+        include "edit_product.php";
+        break;
+      case "del_product":
+        include "del_product.php";
+        break;
         default:
           include "member.php";
-    }
+}
   ?>
 </div>
 </div>

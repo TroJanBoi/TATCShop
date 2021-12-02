@@ -25,7 +25,14 @@
           <li class="nav-item" >
             <a href="index.php?page=member" class="nav-link">
               <i class="nav-icon fas fa-address-card"></i>
-              <p>Member </p>
+              <p>Member</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="index.php?page=user" class="nav-link <?php if($menu=="shop"){echo "active";} ?> ">
+            <i class="nav-icon fas fa-address-card"></i>
+              <p>user</p>
             </a>
           </li>
 
@@ -37,9 +44,9 @@
           </li>
 
            <li class="nav-item">
-            <a href="food.php" class="nav-link <?php if($menu=="food"){echo "active";} ?> ">
+            <a href="index.php?page=product.php" class="nav-link <?php if($menu=="food"){echo "active";} ?> ">
               <i class="nav-icon fas fa-hamburger"></i>
-              <p>Food</p>
+              <p>product</p>
             </a>
           </li>
 
@@ -84,7 +91,7 @@
   
       </div>
           <li class="nav-item">
-            <a href="http://fordev22.com/" class="nav-link text-danger">
+            <a href="logout.php" class="nav-link text-danger">
               <i class="nav-icon fas fa-power-off"></i>
               <p>ออกจากระบบ</p>
             </a>
