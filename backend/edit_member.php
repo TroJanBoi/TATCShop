@@ -26,7 +26,7 @@
             echo "<script>alert('ไม่สามารถแก้ไขข้อมูลได้');window.history.back();</script>";
         }else{
             //header('location:employee.php'); redirec php
-            echo "<script>window.location.href='index.php';</script>";
+            echo "<script>window.location.href='index.php?page=member';</script>";
             //echo "<META HTTP-EQUIV = 'Refresh' CONTENT='0;URL=employee.php'>"; redirec html
     }
     }
