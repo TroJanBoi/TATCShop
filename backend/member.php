@@ -1,9 +1,9 @@
 <?php
 $menu = "index";
 require_once 'connect.php';
-$sql = "SELECT * FROM user ";
+$sql = "SELECT * FROM member ";
 $result = $con->query($sql);
-isset( $_POST['id'] ) ? $user_id = $_POST['id'] : $user_id = "";
+//isset( $_POST['id'] ) ? $user_id = $_POST['id'] : $user_id = "";
 ?>
 
 <!-- Content Header (Page header) -->
@@ -20,6 +20,9 @@ isset( $_POST['id'] ) ? $user_id = $_POST['id'] : $user_id = "";
         <a href="index.php?page=add_member" class="btn btn-success btn-xs">      
             <i class="fa fa-user-plus"></i> เพิ่มข้อมูล สมาชิก
           </a>
+          <a href="index.php?page=add_many" class="btn btn-success btn-xs">      
+            <i class="fa fa-user-plus"></i> เพิ่มข้อมูลสมาชิกหลายคน
+          </a>
         </div>
       </div>
       <br>
@@ -32,7 +35,7 @@ isset( $_POST['id'] ) ? $user_id = $_POST['id'] : $user_id = "";
             <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
               <thead>
                 <tr role="row" class="info">
-                <th  tabindex="0" rowspan="1" colspan="1" style="width: 7%;">ลำดับ</th>
+                <th  tabindex="0" rowspan="1" colspan="1" style="width: 7%;">รหัสนักศึกษา</th>
                   <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">อีเมล</th>
                   <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">ชื่อ</th>
                   <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">ตำแหน่ง</th>
@@ -51,6 +54,7 @@ isset( $_POST['id'] ) ? $user_id = $_POST['id'] : $user_id = "";
                       <td><?php echo $row['email'] ?></td>
                       <td><?php echo $row['name'] ?></td>
                       <td><?php echo $row['position'] ?></td>
+                      
                       <td>           
                         <a class="btn btn-warning btn-xs" href="edit_member.php?id=<?php echo $row['id']?>" >
                           <i class="fas fa-pencil-alt">

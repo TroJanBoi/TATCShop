@@ -29,14 +29,20 @@
       case "product":
         include "product.php";
         break;
-      case "edit_product":
-        include "edit_product.php";
+      case "add_product":
+        include "add_product.php";
         break;
+        case "edit_product":
+          include "edit_product.php";
+          break;
       case "del_product":
         include "del_product.php";
         break;
-        default:
-          include "member.php";
+      
+      case "add_many":
+        include "add_many.php";
+        break;
+        default:  include "member.php";
 }
   ?>
 </div>

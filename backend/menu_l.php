@@ -28,23 +28,9 @@
               <p>Member</p>
             </a>
           </li>
-
-          <li class="nav-item">
-            <a href="index.php?page=user" class="nav-link <?php if($menu=="shop"){echo "active";} ?> ">
-            <i class="nav-icon fas fa-address-card"></i>
-              <p>user</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="shop.php" class="nav-link <?php if($menu=="shop"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-store-alt"></i>
-              <p>Shop</p>
-            </a>
-          </li>
-
+ 
            <li class="nav-item">
-            <a href="index.php?page=product.php" class="nav-link <?php if($menu=="food"){echo "active";} ?> ">
+            <a href="index.php?page=product" class="nav-link <?php if($menu=="food"){echo "active";} ?> ">
               <i class="nav-icon fas fa-hamburger"></i>
               <p>product</p>
             </a>

@@ -1,25 +1,30 @@
 <?php
 require_once 'connect.php';
+
 if(isset($_POST['add'])){
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  $name = $_POST['name'];
-  $position = $_POST['position'];
-  if( $email == '' || $password == '' || $name == '' || $position == '' ){
+  $pro_id = $_POST['pro_id'];
+  $pro_name = $_POST['pro_name'];
+  $price = $_POST['price'];
+  $qty = $_POST['qty'];
+  $filename=$_FILES['pro_pic']['name'];
+  $tmp_name=$_FILES['pro_pic']['tmp_name'];
+  
+  if( $pro_id == '' || $pro_name == '' || $price == '' || $qty == '' ){
     echo "<script>alert('คุณยังไม่ได้กรอกข้อมูล');</script>";
   }else{
-    $old_data = mysqli_fetch_array($con->query("SELECT * FROM member"));
-    if($old_data['email'] == $email){
-      echo "<script>alert('อีเมลนี้มีอยู่แล้ว')</script>";
-  }else if($old_data['name'] == $name){
-      echo "<script>alert('ชื่อนี้มีอยู่แล้ว')</script>";
+    $old_data = mysqli_fetch_array($con->query("SELECT * FROM product"));
+    if($old_data['pro_id'] == $pro_id){
+      echo "<script>alert('รหัสสินค้านี้มีอยู่แล้ว')</script>";
+  }else if($old_data['pro_name'] == $pro_name){
+      echo "<script>alert('ชื่อสินค้ามีอยู่แล้ว')</script>";
   }else{
-  $sql = "INSERT INTO member VALUES('','$email','$password','$name','$position')";
+      if(move_uploaded_file($tmp_name,"product/".$filename))
+  $sql = "INSERT INTO product VALUES('$pro_id','$pro_name','$price','$qty','$filename')";
   $result = $con->query($sql);
   if(!$result){
     echo "<script>alert('ไม่สามารถบันทึกขัอมูลได้');</script>";
   }else{
-    echo "<script>window.location.href='index.php?page=member'</script>";
+    echo "<script>window.location.href='index.php?page=product'</script>";
   }
 }
   }
@@ -39,7 +44,7 @@ if(isset($_POST['add'])){
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
-        <h1>เพิ่มข้อมูลสมาชิก</h1>
+        <h1>เพิ่มข้อมูลสินค้า</h1>
       </div><!-- /.container-fluid -->
     </section>
 
@@ -47,7 +52,7 @@ if(isset($_POST['add'])){
           <section class="content container">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Add member</h3>
+                <h3 class="card-title">Add Product</h3>
               </div>
                   <br>
                 <div class="card-body p-1">
@@ -56,32 +61,28 @@ if(isset($_POST['add'])){
                       <div class="col-md-10">
                         <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" enctype="multipart/form-data" role="form">
                             <div class="form-group">
-                                <label>email</label>
-                                <input type="email" class="form-control" placeholder="Enter email"name="email">
+                                <label>รหัสสินค้า</label>
+                                <input type="text" class="form-control" placeholder="รหัสสินค้า"name="pro_id">
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" class="form-control" placeholder="Enter password" name="password">
+                                <label>ชื่อสินค้า</label>
+                                <input type="text" class="form-control" placeholder="ชื่อสินค้า" name="pro_name">
                             </div>
                             <div class="form-group">
-                                <label>Namel</label>
-                                <input type="text" class="form-control" placeholder="Enter name" name="name">
+                                <label>ราคาสินค้า</label>
+                                <input type="text" class="form-control" placeholder="ราคาสินค้า" name="price">
                             </div>
                             <div class="form-group">
-                                <label>Position</label>
-                                <select class="form-control" name="position">
-                                  <option value="">กรุณาเลือก</option>
-                                  <option value="admin">Admin</option>
-                                  <option value="staff">Staff</option>
-                                </select>
+                                <label>จำนวนสินค้า</label>
+                                <input type="text" class="form-control" placeholder="จำนวนสินค้า" name="qty">
                             </div>
                             <div class="custom-file">
                                   <label for="" >รูปภาพ</label><label style="color: red;">*</label>
-                                  <input type="file" class="form-control" name="mc_img" id="mc_img" onchange="readURL(this);" /><br>
-                                 
+                                  <input type="file" class="form-control" name="pro_pic" onchange="readURL(this);">
+                                  <!--<img id="blah" src="#" alt="your image" height="150" style="margin: 15px 0px 170px;">-->
                             </div>
-                            <img id="blah" src="#" alt="your image" width="50%">
-                            <button type="submit" class="btn btn-success btn-block" name="add">Regis</button>
+                            
+                            <button type="submit" class="btn btn-success btn-block" name="add">ADD</button>
                           </div>
                           
                       <div class="col-md-1"></div>

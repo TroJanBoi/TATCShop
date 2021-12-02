@@ -3,7 +3,7 @@ $menu = "index";
 require_once 'connect.php';
 $sql = "SELECT * FROM product ";
 $result = $con->query($sql);
-//isset( $_POST['id'] ) ? $user_id = $_POST['id'] : $user_id = "";
+//isset( $_POST['pro_id'] ) ? $pro_id = $_POST['pro_id'] : $pro_id = "";
 ?>
 
 <!-- Content Header (Page header) -->
@@ -17,7 +17,7 @@ $result = $con->query($sql);
     <div class="card">
       <div class="card-header card-navy card-outline">
         <div align="right"> 
-        <a href="index.php?page=add_member" class="btn btn-success btn-xs">      
+        <a href="index.php?page=add_product" class="btn btn-success btn-xs">      
             <i class="fa fa-user-plus"></i> เพิ่มข้อมูลสินค้า
           </a>
         </div>
@@ -42,23 +42,32 @@ $result = $con->query($sql);
               </thead>
               
               <tbody>
+              <?php
+
+                   while($row = mysqli_fetch_array($result))
+                   {                
+                ?>
                     <tr>
                       <td><?php echo $row['pro_id'] ?></td>
                       <td><?php echo $row['pro_name'] ?></td>
                       <td><?php echo $row['price'] ?></td>
                       <td><?php echo $row['qty'] ?></td>
-                      <td><?php echo $row['pro_pic'] ?></td>
+                      <td><img src="product/<?php echo $row['pro_pic'] ?>" width="100"></td>
                       <td>           
-                        <a class="btn btn-warning btn-xs" href="edit_product.php?id=<?php echo $row['pro_id']?>" >
+                        <a class="btn btn-warning btn-xs" href="edit_product.php?pro_id=<?php echo $row['pro_id']?>" >
                           <i class="fas fa-pencil-alt">
                           </i>
                         </a>
-                        <a class="btn btn-danger btn-xs" href="del_product.php?id=<?php echo $row['pro_id']?>">
+                        <a class="btn btn-danger btn-xs" href="del_product.php?pro_id=<?php echo $row['pro_id']?>">
                           <i class="fas fa-trash-alt">
                           </i> 
                         </a>
                       </td>
                     </tr>
+                    <?php
+                   }
+                ?>
+                
               </tbody>
               
             </table>
