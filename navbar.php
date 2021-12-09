@@ -27,10 +27,27 @@
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <?php
+        if($id['id']==''){
+      ?>
+         <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link btn btn-warning text-dark" href="login.php">Login</a>
+            </li>
+         </ul>
+        <?php   
+            }else{
+        ?>
+
+     <ul class="navbar-nav">
+         <li class="nav-item">
+            <a class="nav-link text-white"><?php echo $id['name']?></a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link btn btn-danger" href="logout.php">Logout</a>
+         </li>
+     </ul>
+     <?php } ?>
     </div>
   </div>
 </nav>

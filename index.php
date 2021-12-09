@@ -1,3 +1,8 @@
+<?php
+    include 'backend/connect.php';
+    session_start();
+    $id = @mysqli_fetch_array($con->query("SELECT * FROM member where id = '".$_SESSION['id']."'"));
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

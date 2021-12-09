@@ -1,7 +1,7 @@
 <!--Product-->
 <?php
         include 'backend/connect.php';
-        $sql = "SELECT  * FROM Product";
+        $sql = "SELECT  * FROM product";
         $result = $con->query($sql);
     ?>
     <div class="container">
