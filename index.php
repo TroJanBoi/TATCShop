@@ -16,6 +16,9 @@
             case 'cart':
                 include 'cart.php';
                 break;
+            case 'register':
+                include 'register.php';
+                break;
             default:
                 include 'product.php';
                 break;
