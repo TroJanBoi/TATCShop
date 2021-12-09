@@ -27,7 +27,7 @@
             echo "<script>alert('คุณยังไม่ได้กรอกข้อมูล');</script>";
         }else{
             if($filename !== ""){
-                unlink("product/".$old_data['pro_pic']);
+               @unlink("product/".$old_data['pro_pic']);
                 move_uploaded_file($tmp_name,"product/".$filename);
                 $upd_data=$con->query("UPDATE product SET pro_id = '$pro_id', pro_name = '$pro_name', price = '$price', qty = '$qty',pro_pic = '$filename' WHERE pro_id = '$selected_id' ");
             }elseif($filename == ''){
