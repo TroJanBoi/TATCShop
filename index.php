@@ -2,6 +2,14 @@
     include 'connect.php';
     session_start();
     $id = @mysqli_fetch_array($con->query("SELECT * FROM member where id = '".$_SESSION['id']."'"));
+    function date_th($date){
+        $month = array("","มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน","กรกฎาคม","สิงหาคม","กันยายน","ตุลาคม","พฤศจิกายน","ธันวาคม");
+        $day_th = date('d',strtotime($date)); //23
+        $month_th = $month[date('m',strtotime($date))]; //ธันวาคม
+        $year_th = date('Y',strtotime($date))+543; //2021+543=2564
+        $date_th = $day_th." ".$month_th." ".$year_th;
+        return $date_th;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,6 +34,15 @@
                 break;
             case 'order':
                 include 'order.php';
+                break;
+            case 'profile':
+                include 'profile.php';
+                break;
+            case 'myorder':
+                include 'myorder.php';
+                break;
+            case 'edit_member':
+                include 'edit_member.php';
                 break;
             default:
                 include 'product.php';

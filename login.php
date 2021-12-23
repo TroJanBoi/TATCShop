@@ -12,6 +12,7 @@
             header('location:index.php');
             session_start();
             $_SESSION['id'] = $row['id'];
+            //$_SESSION['mem_id'] = $row['mem_id'];
         }else{
             echo "<script>alert('email Or Password ไม่ถูกต้อง')</script>";
         }

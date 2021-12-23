@@ -4,7 +4,7 @@
         include 'connect.php';
         $id = $_SESSION['id'];
         $date = date("Y-m-d");
-        $sql = "INSERT INTO orders VALUES('','$id','$date')";
+        $sql = "INSERT INTO orders VALUES('','$id','$date','')";
         $result = $con->query($sql);
         if($result){
             $order_id = $con->insert_id;
@@ -17,10 +17,11 @@
             }
             unset($_SESSION['cart']);
             unset($_SESSION['qty']);
-            echo "<script>
-            alert('สั่งซื้อสินค้าสำเร็จ');
-            window.location.href='index.php';
-            </script>";
+            // echo "<script>
+            //     alert('สั่งซื้อสินค้าสำเร็จ');
+            //     window.location.href='index.php';
+            //     </script>";
+            header('location:index.php?page=payment');
         }else{
             echo "<script>alert('ไม่สามารถทำรายการนี้ได้');</script>"; 
         }
