@@ -2,8 +2,12 @@
     include 'connect.php';
     $id = $_SESSION['id'];
     $orders = mysqli_fetch_array($con->query("SELECT * FROM orders WHERE id = '$id'"));
+    if(!$orders){
+        echo "<script>alert('คุณยังไม่มีรายการสินค้า');window.location.href='index.php'</script>";
+    }
     $sql = "SELECT * FROM  order_list,product WHERE product.pro_id = order_list.pro_id";
     $result = $con->query($sql);
+   
 ?>
 
 <div class="container mt-5">

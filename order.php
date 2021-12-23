@@ -61,7 +61,7 @@
             }        
             ?>
             <tr>
-                <td colspan="6">
+                <td colspan="5" align="ringht">
                     <h4>จำนวนเงินรวมทั้งหมด <?php echo $total_price?> บาท</h4>
                 </td>
             </tr>

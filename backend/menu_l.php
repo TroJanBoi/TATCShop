@@ -30,50 +30,18 @@
           </li>
  
            <li class="nav-item">
-            <a href="index.php?page=product" class="nav-link <?php if($menu=="food"){echo "active";} ?> ">
+            <a href="index.php?page=product" class="nav-link">
               <i class="nav-icon fas fa-hamburger"></i>
               <p>product</p>
             </a>
           </li>
 
-            <li class="nav-item">
-            <a href="doc.php" class="nav-link <?php if($menu=="doc"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-file-pdf"></i>
-              <p>Doc</p>
-            </a>
-          </li>
-
-
           <li class="nav-item">
-            <a href="from.php" class="nav-link <?php if($menu=="from"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-apple-alt"></i>
-              <p>Form</p>
+            <a href="index.php?page=order" class="nav-link">
+              <i class="nav-icon fas fa-hamburger"></i>
+              <p>คำสั่งซื้อ</p>
             </a>
           </li>
-
-      
-
-          <li class="nav-item">
-            <a href="table.php" class="nav-link <?php if ($menu == "table"){echo "active";} ?>">
-              <i class="nav-icon fas fa-list-alt"></i>
-              <p>Tebles</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="button.php" class="nav-link <?php if ($menu == "button"){echo "active";} ?>">
-              <i class="nav-icon fas fa-check-square"></i>
-              <p>Buttons</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="icon.php" class="nav-link <?php if ($menu == "icon"){echo "active";} ?>">
-              <i class="nav-icon fas fa-icons"></i>
-              <p>Icon</p>
-            </a>
-          </li>
-      <div class="user-panel mt-2 pb-3 mb-2 d-flex">
   
       </div>
           <li class="nav-item">
@@ -81,11 +49,7 @@
               <i class="nav-icon fas fa-power-off"></i>
               <p>ออกจากระบบ</p>
             </a>
-          </li>
-  
-
-
-          
+          </li>        
         </ul>
       </nav>
       
